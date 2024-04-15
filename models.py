@@ -17,9 +17,7 @@ sql_create_users_table = """ CREATE TABLE IF NOT EXISTS "users" (
 sql_create_products_table = """ CREATE TABLE IF NOT EXISTS "products" (
                             "id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
                             "name" text,
-                            "price" int,
-                            "img" text,
-                            "colour" text
+                            "price" int
                             );"""
 
 sql_create_bucket_table = """CREATE TABLE IF NOT EXISTS "bucket" (
@@ -34,12 +32,12 @@ sql_create_orders_table = """CREATE TABLE IF NOT EXISTS "orders" (
                             "user" text NOT NULL
                             );"""
 
-sql_insert_products_table = """INSERT INTO products (id, name, price, img, colour) VALUES 
-                                        ('5', 'Кольцевой ключ', '400', NULL, NULL),
-                                        ('4', 'Торцовый ключ', '100', NULL, NULL),
-                                        ('3', 'Разводной ключ', '300', NULL, NULL),
-                                        ('2', 'Гаечный ключ', '200', NULL, NULL),
-                                        ('1', 'Молоток', '1500', NULL, NULL);
+sql_insert_products_table = """INSERT INTO products (id, name, price) VALUES 
+                                        ('5', 'Кольцевой ключ', '400'),
+                                        ('4', 'Торцовый ключ', '100'),
+                                        ('3', 'Разводной ключ', '300'),
+                                        ('2', 'Гаечный ключ', '200'),
+                                        ('1', 'Молоток', '1500');
                                         """
 
 sql_insert_users_admin = """INSERT INTO users (id, user, password, adress ,isadmin) VALUES 
@@ -49,9 +47,9 @@ sql_insert_users_admin = """INSERT INTO users (id, user, password, adress ,isadm
                                         """
 
 sql_insert_orders = """INSERT INTO orders (order_id, data,user) VALUES 
-                                        ('1', '11:44:55', 'admin'),
-                                        ('2', '11:45:55', 'Bob'),
-                                        ('3', '11:46:55', 'Alice');
+                                        ('1', '9:45:55', 'admin'),
+                                        ('2', '10:33:24', 'Bob'),
+                                        ('3', '11:46:56', 'Alice');
                                         """
 
 def create_table(conn, create_table_sql):
@@ -183,7 +181,6 @@ def getOrders():
     cur.execute("SELECT * from orders;")
     row = cur.fetchall()
     return row
-
 def getOrdersByUser(user):
     conn=sqlite3.connect(db_file)
     cur = conn.cursor()
@@ -220,7 +217,6 @@ def updateUser(user,password):
     finally:
         if conn:
             conn.close()
-
 def getUser(user):
     row = ""
     try:

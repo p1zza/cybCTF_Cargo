@@ -17,7 +17,7 @@
             <main>
                 <div id="registration" class="loginpage">
                     <form form method="POST">
-                        <h1>Окно регистрации</h1>
+                        <h1>Регистрация</h1>
                         {% with messages = get_flashed_messages() %}
                             {% if messages %}
                                 <ul class=flashes>
@@ -36,11 +36,13 @@
                             <input id="password" name="password" required="required" type="password" placeholder="" />
                         </p>
                         <p class="registration button">
-                            <input type="submit" value="registration" />
+                            <input type="submit" value="Регистрация" />
                         </p>
                     </form>
                 </div>
             </main>
         
         </body>
-        
+        <footer>
+            <div class="footer">&copy;<span> CyberCTF </span></div>
+        </footer>

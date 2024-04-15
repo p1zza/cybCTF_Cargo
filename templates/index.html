@@ -22,6 +22,7 @@
             </ul>
         {% endif %}
     {% endwith %}
+    
 </head> 
 <body> 
     <style>
@@ -30,6 +31,15 @@
             background-image: url({{url_for('static',filename='images/main.jpg')}})
         }
     </style>
+    <div class="infoText">
+        <span> 
+            <pre></pre>
+            <pre>  Вас приветствует магазин с Все Инструменты!</pre>
+            <pre>  Наш магазин пользуется популярностью, </pre>
+            <pre>  Последние заказы магазина представлены в таблице </pre>
+            <pre>  Для создания заказа пройдите регистрацию</pre>
+            <pre></pre>
+        </span></div>
     <table class = "table">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -58,4 +68,9 @@
 <main>
     
 </main>
+
+
+<footer>
+    <div class="footer">&copy;<span> CyberCTF </span></div>
+</footer>
 </html>

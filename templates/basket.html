@@ -19,11 +19,6 @@
                     background-image: url({{url_for('static',filename='images/main.jpg')}})
                 }
             </style>
-            <div id = footer>
-                {%block footer%}
-               
-                {%endblock%}
-            </div>
             <table class = "table">
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -55,4 +50,7 @@
         <main>
         
         </main>
+        <footer>
+            <div class="footer">&copy;<span> CyberCTF </span></div>
+        </footer>
         </html>

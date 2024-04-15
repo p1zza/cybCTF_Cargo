@@ -18,17 +18,32 @@ nav {
 }
 .menu ul {
   padding: 1em 0;
-  background: #4e52c2;
+  background: #0D1321;
 }
 .menu a {
   padding: 1em;
   background: rgba(177, 152, 145, .3);
-  border-right: 1px solid rgb(23, 21, 134);
-  color: #ffffff;
+  border-right: 1px #FFEDDF;
+  color: #FFEDDF;
 }
-.menu a:hover {background: rgb(23, 21, 134);}
+.menu a:hover {background: #7d7d7d;}
 .menu li {
   display: inline;
+}
+
+.infoText {
+  position: absolute;
+  background: #0D1321;
+  color: #FFEDDF;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table{
@@ -39,10 +54,11 @@ nav {
     margin-right: auto;
 }
 .table__row:nth-child(even){
-    background-color: bisque;
+    background-color: rgb(231, 228, 228);
 }
 .table__header{
     text-align: left;
+    background-color: #c3c3c3;
 }
 .table__cell {
     padding: 8px
@@ -60,35 +76,75 @@ nav {
 .loginpage{
     padding: 6px;
     font-size: 16px;
-	  line-height: 14px;	
-	  color: #ffffff;
+	  line-height: 16px;	
+	  color: #FFEDDF;
     margin-left: auto;
     margin-right: auto;
-    width: 13em;
+    width: 16em;
     border: 2px solid white;
-    background: gray;
+    background: #0D1321;
 }
 
 .flashes{
   padding: 6px;
   font-size: 16px;
   line-height: 14px;	
-  color: #ffffff;
+  color: #FFEDDF;
   margin-left: auto;
   margin-right: auto;
   width: 13em;
   border: 2px solid white;
-  background: gray;
+  background: #0D1321;
 }
 
 .profileHello{
   padding: 6px;
     font-size: 16px;
 	  line-height: 14px;	
-	  color: #ffffff;
+    color: #FFEDDF;
     margin-left: auto;
     margin-right: auto;
     width: 13em;
     border: 2px solid white;
-    background: gray;
+    background: #0D1321;
+}
+
+.registration button{
+  color: #16bd24;
+  display: block;
+}
+
+.bottom{
+  display: block;
+  width: 600px;
+  color: white;
+  background: #0D1321;
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  transition: .5s linear;
+  text-align: center;
+}
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: #0D1321;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 }

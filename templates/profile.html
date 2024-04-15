@@ -5,7 +5,7 @@
             {
                 background-image: url({{url_for('static',filename='images/main.jpg')}})
             }
-        </style>
+        </style>        
         <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
         <title>Profile</title>
         {% block content %} 
@@ -19,7 +19,15 @@
             </ul>
         </nav> 
         {%endblock%} 
-    <main> 
+        <div class="infoText">
+            <span> 
+                <pre></pre>
+                <pre>  Уважаемый пользователь, Добрый день! </pre>
+                <pre>  Список последних заказов доступен </pre>
+                <pre>  во вкладке Профиль</pre>
+                <pre></pre>
+            </span></div>
+        <main> 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
             <ul class=flashes>
@@ -49,4 +57,7 @@
             {%endfor%}
         </table>
     </main>
+    <footer>
+        <div class="footer">&copy;<span> CyberCTF </span></div>
+    </footer>
 </html>
