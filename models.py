@@ -41,7 +41,7 @@ sql_insert_products_table = """INSERT INTO products (id, name, price) VALUES
                                         """
 
 sql_insert_users_admin = """INSERT INTO users (id, user, password, adress ,isadmin) VALUES 
-                                    ('1', 'admin', 'HelloIAmAdmin','{{cdb__sasdasdas213123123123_}}', '1'),
+                                    ('1', 'admin', 'HelloIAmAdmin','flag{fWNtSLGxPEOQByiellmvlhtH}', True),
                                     ('2', 'Bob', 'DontTryToHack','', '0'),
                                     ('3', 'Alice', 'DontTryToHackMeToo','', '0');
                                         """

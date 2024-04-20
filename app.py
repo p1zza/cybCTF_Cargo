@@ -55,7 +55,7 @@ def profile():
     content ['username'] = username
 
     if is_admin == 1:
-            flash("Флаг для админа")
+            flash("flag{fWNtSLGxPEOQByiellmvlhtH}")
     row = models.getOrdersByUser(username)
     return (render_template("profile.html",context = content, headings = ("Номер заказа","Время","Пользователь"), data = row))
     
@@ -223,4 +223,4 @@ class UserLogin():
             return NULL
 
 if __name__ == '__main__':
-    app.run(debug=True, port = 6996)
+    app.run(debug=False, port = 8002)
