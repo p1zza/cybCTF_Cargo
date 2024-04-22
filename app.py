@@ -223,4 +223,4 @@ class UserLogin():
             return NULL
 
 if __name__ == '__main__':
-    app.run(debug=False, port = 8002)
+    app.run(debug=False, port = 8002, host = '0.0.0.0')
