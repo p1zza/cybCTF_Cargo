@@ -63,12 +63,10 @@ def create_table(conn, create_table_sql):
 def insert_data_to_table(conn,expression):
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute(expression)
         row = cur.fetchall()
         conn.commit()
-        print(row)
     except Error as e:
         print(e)
     finally:
@@ -94,7 +92,6 @@ def createDB():
             conn = None
         try:
             conn = sqlite3.connect(db_file)
-            print(sqlite3.version)
         except Error as e:
             print(e)
         finally:
@@ -132,14 +129,12 @@ def getBasket(user):
 def insertProductsToBasket(user,product):
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("INSERT into bucket (user,product) values (?,?);",(user,product))
         row = cur.fetchall()
         cur.execute("select * from bucket;")
         row = cur.fetchall()
         conn.commit()
-        print(row)
     except Error as e:
         print(e)
     finally:
@@ -148,12 +143,10 @@ def insertProductsToBasket(user,product):
 def deleteProductsFromBasket(user):
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("DELETE from bucket WHERE user = ?;",(user,))
         row = cur.fetchall()
         conn.commit()
-        print(row)
     except Error as e:
         print(e)
     finally:
@@ -164,12 +157,10 @@ def deleteProductsFromBasket(user):
 def insertOrder(user,datetime):
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("INSERT into orders (data, user) values (?,?);",(datetime, user))
         row = cur.fetchall()
         conn.commit()
-        print(row)
     except Error as e:
         print(e)
     finally:
@@ -192,12 +183,10 @@ def getOrdersByUser(user):
 def insertUser(user,password):
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("INSERT into users(user,password) values (?,?);",(user,password))
         row = cur.fetchall()
         conn.commit()
-        print(row)
     except Error as e:
         print(e)
     finally:
@@ -206,7 +195,6 @@ def insertUser(user,password):
 def updateUser(user,password):
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("UPDATE users SET password = ? WHERE user = ?;", (password,user))
         row = cur.fetchall()
@@ -221,7 +209,6 @@ def getUser(user):
     row = ""
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("SELECT * from users where user=?",(user,))
         row = cur.fetchall()
@@ -235,7 +222,6 @@ def getUserID(user):
     row = ""
     try:
         conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
         cur = conn.cursor()
         cur.execute("SELECT id from users where user=?",(user,))
         row = cur.fetchall()

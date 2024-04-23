@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . .
 
-EXPOSE 8003
+EXPOSE 8002
 
 # Run the application.
 CMD python app.py
