@@ -133,6 +133,7 @@ nav {
 body {
   height: 100vh;
   overflow: hidden;
+  background-size: contain;
 }
 .footer {
   position: absolute;
